@@ -29,11 +29,12 @@ public class ItemService {
         return itemRepo.save(item);
     }
 
-    public void deleteItem(Long id) {
-        itemRepo.deleteItemById(id);
+    public void deleteItem(Item item) {
+        itemRepo.delete(item);
     }
 
     public Item findItemById(Long id) {
         return itemRepo.findItemById(id).orElseThrow(() -> new ItemNotFoundException("Item with id: " + id + " is not found."));
     }
+
 }

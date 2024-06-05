@@ -45,7 +45,8 @@ public class ItemResource {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteItem(@PathVariable("id") Long id) {
-        itemService.deleteItem(id);
+        Item item = itemService.findItemById(id);
+        itemService.deleteItem(item);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
