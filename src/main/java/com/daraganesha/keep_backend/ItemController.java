@@ -11,10 +11,10 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/todos")
-public class ItemResource {
+public class ItemController {
     private final ItemService itemService;
 
-    public ItemResource(ItemService itemService) {
+    public ItemController(ItemService itemService) {
         this.itemService = itemService;
     }
 
